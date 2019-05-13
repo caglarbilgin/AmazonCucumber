@@ -1,3 +1,5 @@
 {
-
+  "LOGIN_BUTTON": {
+    "cssSelector": "#nav-signin-tooltip > a > span"
+  }
 }

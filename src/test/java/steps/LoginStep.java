@@ -5,7 +5,10 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
+import mapping.MapMethodType;
+import mapping.Mapper;
 import org.junit.After;
+
 import java.io.IOException;
 
 public class LoginStep extends BaseTest {
@@ -18,7 +21,7 @@ public class LoginStep extends BaseTest {
 
     @And("^Click \"([^\"]*)\" button$")
     public void clickButton(String loginButton) throws Throwable {
-
+        driver.findElement(Mapper.foundActivity(MapMethodType.CLICK_ELEMENT, loginButton)).click();
     }
 
     @And("^Enter the \"([^\"]*)\" and \"([^\"]*)\"$")
