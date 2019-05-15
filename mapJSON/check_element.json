@@ -1,5 +1,5 @@
 {
   "CHECK_LOGIN": {
-    "cssSelector": "#auth-warning-message-box > div > h4"
+    "cssSelector": "#auth-error-message-box > div > div > ul > li > span"
   }
 }

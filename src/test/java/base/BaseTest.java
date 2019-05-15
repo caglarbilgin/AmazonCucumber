@@ -1,5 +1,6 @@
 package base;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +12,7 @@ public class BaseTest {
 
     @Before
     public void setUp() {
-
+        PropertyConfigurator.configure("properties/log4j.properties");
         System.setProperty("webdriver.chrome.driver", "chromedriver");
         driver = new ChromeDriver();
         driver.get("https://www.amazon.com.tr");
@@ -20,6 +21,7 @@ public class BaseTest {
 
     @After
     public void tearDown() {
+
         driver.quit();
     }
 }

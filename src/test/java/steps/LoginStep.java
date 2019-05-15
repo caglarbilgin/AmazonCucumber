@@ -1,21 +1,22 @@
 package steps;
 
 import base.BaseTest;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import mapping.MapMethodType;
 import mapping.Mapper;
+import org.apache.log4j.PropertyConfigurator;
 import org.junit.After;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
-import java.util.Map;
 
 public class LoginStep extends BaseTest {
+    protected static final Logger log = Logger.getLogger(LoginStep.class);
 
 
     @Given("^Go to homepage$")
@@ -40,7 +41,14 @@ public class LoginStep extends BaseTest {
 
     @Then("^Check the \"([^\"]*)\" information is correct$")
     public void checkTheInformationIsCorrect(String login) {
-        Assert.assertEquals("Önemli Mesaj!",(driver.findElement(Mapper.foundActivity(MapMethodType.CHECK_ELEMENT, login)).getText()));
+
+        try{
+            Assert.assertNotEquals("            Bu e-posta adresiyle bir hesap bulamıyoruz\n",(driver.findElement(Mapper.foundActivity(MapMethodType.CHECK_ELEMENT, login))).getText());
+            log.error("Login failed");
+        }catch (Exception e){
+            log.info("Login successfully!!");
+        }
+
     }
 
     @After
