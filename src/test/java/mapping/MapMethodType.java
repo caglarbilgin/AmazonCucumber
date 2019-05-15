@@ -2,7 +2,7 @@ package mapping;
 
 public enum MapMethodType {
 
-    CLICK_ELEMENT("click_element"), INPUT_ELEMENT("input_element");
+    CLICK_ELEMENT("click_element"), INPUT_ELEMENT("input_element"), CHECK_ELEMENT("check_element");
 
     private final String value;
 

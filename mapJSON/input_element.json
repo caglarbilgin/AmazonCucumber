@@ -1,3 +1,8 @@
 {
-
+  "USERNAME_INPUT": {
+    "id": "ap_email"
+  },
+  "PASSWORD_INPUT": {
+    "id": "ap_password"
+  }
 }

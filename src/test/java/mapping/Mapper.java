@@ -8,7 +8,6 @@ import org.openqa.selenium.By;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Locale;
 import java.util.Map.Entry;
 import java.util.Set;
 
